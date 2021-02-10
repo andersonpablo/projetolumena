@@ -1,0 +1,232 @@
+[
+ {
+   "dia": 1,
+   "frase": " Promoveu a deslegitimação"
+ },
+ {
+   "dia": 2,
+   "frase": " Ofendeu as vulnerabilidades"
+ },
+ {
+   "dia": 3,
+   "frase": " Se aproveitou do discurso"
+ },
+ {
+   "dia": 4,
+   "frase": " Se apropriou"
+ },
+ {
+   "dia": 5,
+   "frase": " Tirou o contexto"
+ },
+ {
+   "dia": 6,
+   "frase": " Se aproveitou"
+ },
+ {
+   "dia": 7,
+   "frase": " Corrompeu as desconstruções"
+ },
+ {
+   "dia": 8,
+   "frase": " Ressignificou inverdades"
+ },
+ {
+   "dia": 9,
+   "frase": " Criticou maliciosamente os princípios"
+ },
+ {
+   "dia": 10,
+   "frase": " Reduziu o discurso"
+ },
+ {
+   "dia": 11,
+   "frase": " Potencializou o silenciamento"
+ },
+ {
+   "dia": 12,
+   "frase": " Desrespeitou a jornada"
+ },
+ {
+   "dia": 13,
+   "frase": " Usurpou o lugar de fala"
+ },
+ {
+   "dia": 14,
+   "frase": " Desmobilizou os discursos."
+ },
+ {
+   "dia": 15,
+   "frase": " Prestou desacolhimento"
+ },
+ {
+   "dia": 16,
+   "frase": " Alvejou a militância"
+ },
+ {
+   "dia": 17,
+   "frase": " Desestabilizou as oportunidades"
+ },
+ {
+   "dia": 18,
+   "frase": " Estereotipizou a biologia"
+ },
+ {
+   "dia": 19,
+   "frase": " Diminutizou as lamúrias"
+ },
+ {
+   "dia": 20,
+   "frase": " Enfraqueceu as conquistas"
+ },
+ {
+   "dia": 21,
+   "frase": " Transversalizou as palavras"
+ },
+ {
+   "dia": 22,
+   "frase": " Julgou o caráter"
+ },
+ {
+   "dia": 23,
+   "frase": " Quizsfazer palco em cima"
+ },
+ {
+   "dia": 24,
+   "frase": " Deslegitimou a relativização"
+ },
+ {
+   "dia": 25,
+   "frase": " Assumiu o lugar de fala da ancestralidade"
+ },
+ {
+   "dia": 26,
+   "frase": " Incentivou a erradicação"
+ },
+ {
+   "dia": 27,
+   "frase": " Desalinhou as pautas"
+ },
+ {
+   "dia": 28,
+   "frase": " Descentralizou as uniformidades do discurso"
+ },
+ {
+   "dia": 29,
+   "frase": " Abusou psicologicamente"
+ },
+ {
+   "dia": 30,
+   "frase": " Recusou internalizar as diversidades"
+ },
+ {
+   "dia": 31,
+   "frase": " Descontextualizou a argumentatividade"
+ },
+
+ {
+   "mes": 1,
+   "frase": " da comunidade LGBTQIA+ no contexto civilizacional contemporâneo"
+ },
+ {
+   "mes": 2,
+   "frase": " da reparação histórica há tanto tempo necessária"
+ },
+ {
+   "mes": 3,
+   "frase": " dos pretos, pardos, miscigenados, indigenas e autoproclamados"
+ },
+ {
+   "mes": 4,
+   "frase": " da mulher fenotipicamente negra"
+ },
+ {
+   "mes": 5,
+   "frase": " das mulheres trans"
+ },
+ {
+   "mes": 6,
+   "frase": " da homoafetividade"
+ },
+ {
+   "mes": 7,
+   "frase": " de seus Iguais, silenciados pela hereronormatividade patriarcal"
+ },
+ {
+   "mes": 8,
+   "frase": " da luta anticolonialista"
+ },
+ {
+   "mes": 9,
+   "frase": " da mulher branca socialmente privilegiada, em detrimento da pauta antirracial"
+ },
+ {
+   "mes": 10,
+   "frase": " do homem negro convocado ao desejo de se autosabotar"
+ },
+ {
+   "mes": 11,
+   "frase": " das pautas minoritárias."
+ },
+ {
+   "mes": 12,
+   "frase": " dos indivíduos silenciados por seus lugares de dores"
+ },
+
+ {
+   "cor": "Branca",
+   "frase": " para proveito próprio"
+ },
+ {
+   "cor": "Azul",
+   "frase": " de maneira a dizimar o discurso acolhedor"
+ },
+ {
+   "cor": "Preta",
+   "frase": " se aproveitando de uma pauta coletiva para resolver um B.0 que é seu"
+ },
+ {
+   "cor": "Rosa",
+   "frase": " com o intuitos egoísticos que transcendem a normalidade dos fatos"
+ },
+ {
+   "cor": "Verde",
+   "frase": "pobres e desprivilegiadas que vivem à margem de uma sociedade cruel e opressora sem entender as vicissitudes sociais que abrangem as minorias"
+ },
+ {
+   "cor": "Amarela",
+   "frase": " sendo contraproducente com quem é diferente de você"
+ },
+ {
+   "cor": "Vermelha",
+   "frase": " infligindo sentimentos de dor na alma dos menos privilegiados"
+ },
+ {
+   "cor": "Cinza",
+   "frase": " perpetuando o fascismo"
+ },
+ {
+   "cor": "Colorida",
+   "frase": " dos gays e não-binários"
+ },
+ {
+   "cor": "Roxa",
+   "frase": " para propagar inverdades "
+ },
+ {
+   "cor": "Laranja",
+   "frase": " ressignificando a conversa com inverdades"
+ },
+ {
+   "cor": "Bege",
+   "frase": " cujos fenótipos nunca serão sobrepujados em detrimento dos negros"
+ },
+ {
+   "cor": "Listrada",
+   "frase": " se aproveitando da apropriação cultural"
+ },
+ {
+   "cor": "Outra cor não listada",
+   "frase": " fingindo não entender o contexto sociocultural"
+ }
+]
