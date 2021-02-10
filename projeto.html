@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript - read JSON from URL</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <div class="mypanel"></div>
+
+    <script>
+    $.get('https://raw.githubusercontent.com/andersonpablo/projetolumena/main/fraseslumena.json',function(data){
+    data = eval ("(" + data + ")");
+    console.log(data);
+});
+    </script>
+    
+</body>
+</html>
