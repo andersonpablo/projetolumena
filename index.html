@@ -1,88 +1,146 @@
 <!doctype html>
 <html>
 
-<head></head>
+<head>
+    <title>Lumenation</title>
+    <style>
+        body {
+            background: rgb(131,58,180);
+            background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            font-family:courier,arial,helvetica;
+        }
+        h1{
+            color: white;
+            text-shadow: 0 0 2px #000;
+            text-align: center;
+        }
+
+        #lumena {
+            background: url('lumena.jpg');
+            height: 326px;
+            width: 500px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            text-shadow: 0 0 20px white;
+            border: solid 2px white;
+            border-radius: 10px;
+        }
+
+        #lumena span {
+            text-align: center;
+            height: 30px;
+            color: white;
+            padding: 30px;
+            text-shadow: 0 0 2px #000;
+        }
+
+        #app {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #selects {
+            justify-content: center;
+            display: flex;
+            margin: 20px;
+        }
+    </style>
+
+</head>
 
 <body>
+    <div id="app">
 
-    <select id="day">
-        <option value="1" selected>1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-        <option value="13">13</option>
-        <option value="14">14</option>
-        <option value="15">15</option>
-        <option value="16">16</option>
-        <option value="17">17</option>
-        <option value="18">18</option>
-        <option value="19">19</option>
-        <option value="20">20</option>
-        <option value="21">21</option>
-        <option value="22">22</option>
-        <option value="23">23</option>
-        <option value="24">24</option>
-        <option value="25">25</option>
-        <option value="26">26</option>
-        <option value="27">27</option>
-        <option value="28">28</option>
-        <option value="29">29</option>
-        <option value="30">30</option>
-        <option value="31">31</option>
-    </select>
-    <select id="month">
-        <option value="1" selected>Janeiro</option>
-        <option value="2">Feveiro</option>
-        <option value="3">Março</option>
-        <option value="4">Abril</option>
-        <option value="5">Maio</option>
-        <option value="6">Junho</option>
-        <option value="7">Julho</option>
-        <option value="8">Agosto</option>
-        <option value="9">Setembro</option>
-        <option value="10">Outubro</option>
-        <option value="11">Novembro</option>
-        <option value="12">Dezembro</option>
-    </select>
+        <h1>Selecione o dia e ano que você nasceu</h1>
+
+        <div id="selects">
+            <select id="day">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
+            <select id="month">
+                <option value="1" selected>Janeiro</option>
+                <option value="2">Fevereiro</option>
+                <option value="3">Março</option>
+                <option value="4">Abril</option>
+                <option value="5">Maio</option>
+                <option value="6">Junho</option>
+                <option value="7">Julho</option>
+                <option value="8">Agosto</option>
+                <option value="9">Setembro</option>
+                <option value="10">Outubro</option>
+                <option value="11">Novembro</option>
+                <option value="12">Dezembro</option>
+            </select>
+        </div>
+        <div id="lumena">
+            <span id="lumeation"></span>
+        </div>
+    </div>
 </body>
 
 <script>
-    let lumenation, day, month;
+    let lumenations, day, month;
 
     const dayElement = document.getElementById("day");
     const monthElement = document.getElementById("month");
+    const lumentationElement = document.getElementById("lumeation");
 
-    fetch("fraseslumena.json", { headers: { "Content-Type": "application/json; charset=utf-8" } })
+    fetch("fraseslumena.json", { headers: { 'Content-Type': 'application/json; charset=utf-8' } })
         .then(res => res.json())
         .then(response => {
-            lumenation = response
+            lumenations = response
+            lumenate()
         })
 
-    dayElement.addEventListener('change', function () {
-        alert(lumenate())
-    })
-    monthElement.addEventListener('change', function () {
-        alert(lumenate())
-    })
+    dayElement.addEventListener('change', lumenate)
+    monthElement.addEventListener('change', lumenate)
 
     function lumenate() {
         day = dayElement.value;
         month = monthElement.value;
 
-        let dayLumene = lumenation['dias'].find((value) => value.dia == day)
-        let monthLumene = lumenation['meses'].find((value) => value.mes == month)
+        let dayLumene = lumenations.dias.find(value => value.dia == day)
+        let monthLumene = lumenations.meses.find(value => value.mes == month)
 
-        return dayLumene.frase + monthLumene.frase
-    }
-
+        lumentationElement.innerHTML = `Você ${dayLumene.frase.toLowerCase()} ${monthLumene.frase}, meu parceiro!`
+    };
 </script>
 
 </html>
