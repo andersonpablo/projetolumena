@@ -178,59 +178,59 @@
 
  "cores": [
    {
-    "cor": "1",
+    "cor": 1,
     "frase": "para proveito próprio"
   },
   {
-    "cor": "2",
+    "cor": 2,
     "frase": "de maneira a dizimar o discurso acolhedor"
   },
   {
-    "cor": "3",
+    "cor": 3,
     "frase": "se aproveitando de uma pauta coletiva para resolver um B.0 que é seu"
   },
   {
-    "cor": "4",
+    "cor": 4,
     "frase": "com o intuitos egoísticos que transcendem a normalidade dos fatos"
   },
   {
-    "cor": "5",
+    "cor": 5,
     "frase": "pobres e desprivilegiadas que vivem à margem de uma sociedade cruel e opressora sem entender as vicissitudes sociais que abrangem as minorias"
   },
   {
-    "cor": "6",
+    "cor": 6,
     "frase": "sendo contraproducente com quem é diferente de você"
   },
   {
-    "cor": "7",
+    "cor": 7,
     "frase": "infligindo sentimentos de dor na alma dos menos privilegiados"
   },
   {
-    "cor": "8",
+    "cor": 8,
     "frase": "perpetuando o fascismo"
   },
   {
-    "cor": "9",
+    "cor": 9,
     "frase": "dos gays e não-binários"
   },
   {
-    "cor": "10",
+    "cor": 10,
     "frase": "para propagar inverdades "
   },
   {
-    "cor": "11",
+    "cor": 11,
     "frase": "ressignificando a conversa com inverdades"
   },
   {
-    "cor": "12",
+    "cor": 12,
     "frase": "cujos fenótipos nunca serão sobrepujados em detrimento dos negros"
   },
   {
-    "cor": "13",
+    "cor": 13,
     "frase": "se aproveitando da apropriação cultural"
   },
   {
-    "cor": "14",
+    "cor": 14,
     "frase": "fingindo não entender o contexto sociocultural"
   }
 ]
