@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 
@@ -58,7 +59,7 @@
 <body>
     <div id="app">
 
-        <h1>Selecione o dia e ano que você nasceu</h1>
+        <h1>Selecione o dia e ano que você nasceu e a cor da camisa que você está usando</h1>
 
         <div id="selects">
             <select id="day">
@@ -138,7 +139,7 @@
 
     const dayElement = document.getElementById("day");
     const monthElement = document.getElementById("month");
-    const monthElement = document.getElementById("color");
+    const colorElement = document.getElementById("color");
     const lumentationElement = document.getElementById("lumeation");
 
     fetch("fraseslumena.json", { headers: { 'Content-Type': 'application/json; charset=utf-8' } })
@@ -159,9 +160,9 @@
 
         let dayLumene = lumenations.dias.find(value => value.dia == day)
         let monthLumene = lumenations.meses.find(value => value.mes == month)
-        let colorLumene = lumenations.meses.find(value => value.cor == color)
+        let colorLumene = lumenations.cores.find(value => value.cor == color)
 
-        lumentationElement.innerHTML = `Você ${dayLumene.frase.toLowerCase()} ${colorLumene.frase}!`
+        lumentationElement.innerHTML = `Você grandão, ${dayLumene.frase.toLowerCase()} ${monthLumene.frase} ${colorLumene.frase}!`
     };
 </script>
 
