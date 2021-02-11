@@ -108,6 +108,24 @@
                 <option value="11">Novembro</option>
                 <option value="12">Dezembro</option>
             </select>
+             <select id="color">
+                <option value="1" selected>Branca</option>
+                <option value="2">Azul</option>
+                <option value="3">Amarelo</option>
+                <option value="4">Verde</option>
+                <option value="5">Laranja</option>
+                <option value="6">Roxo</option>
+                <option value="7">Vermelho</option>
+                <option value="8">Preta</option>
+                <option value="9">Cinza</option>
+                <option value="10">Bege</option>
+                <option value="11">Rosa</option>
+                <option value="12">Colorida</option>
+                <option value="13">Listrada</option>
+                <option value="14">Sem Camisa</option>
+
+            </select>
+
         </div>
         <div id="lumena">
             <span id="lumeation"></span>
@@ -116,10 +134,11 @@
 </body>
 
 <script>
-    let lumenations, day, month;
+    let lumenations, day, month, color;
 
     const dayElement = document.getElementById("day");
     const monthElement = document.getElementById("month");
+    const monthElement = document.getElementById("color");
     const lumentationElement = document.getElementById("lumeation");
 
     fetch("fraseslumena.json", { headers: { 'Content-Type': 'application/json; charset=utf-8' } })
@@ -131,15 +150,18 @@
 
     dayElement.addEventListener('change', lumenate)
     monthElement.addEventListener('change', lumenate)
+    colorElement.addEventListener('change', lumenate)
 
     function lumenate() {
         day = dayElement.value;
         month = monthElement.value;
+        color = colorElement.value;
 
         let dayLumene = lumenations.dias.find(value => value.dia == day)
         let monthLumene = lumenations.meses.find(value => value.mes == month)
+        let colorLumene = lumenations.meses.find(value => value.cor == color)
 
-        lumentationElement.innerHTML = `Você ${dayLumene.frase.toLowerCase()} ${monthLumene.frase}, meu parceiro!`
+        lumentationElement.innerHTML = `Você ${dayLumene.frase.toLowerCase()} ${colorLumene.frase}!`
     };
 </script>
 
