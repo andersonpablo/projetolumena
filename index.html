@@ -4,17 +4,25 @@
 
 <head>
     <title>Lumenation</title>
+    <meta name='viewport' 
+     content='width=520, initial-scale=1.0, maximum-scale=1.0, 
+     user-scalable=0' >
     <style>
         body {
-            background: rgb(131,58,180);
-            background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+            color: white;
+            background: rgb(131, 58, 180);
+            background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100%;
-            font-family:courier,arial,helvetica;
+            padding: 10px;
+            min-width: 480px;
+            font-family: arial, helvetica;
         }
-        h1{
+
+        h1,
+        h3 {
             color: white;
             text-shadow: 0 0 2px #000;
             text-align: center;
@@ -30,14 +38,7 @@
             text-shadow: 0 0 20px white;
             border: solid 2px white;
             border-radius: 10px;
-        }
-
-        #lumena span {
-            text-align: center;
-            height: 30px;
-            color: white;
-            padding: 30px;
-            text-shadow: 0 0 2px #000;
+            margin-top: 20px;
         }
 
         #app {
@@ -52,6 +53,27 @@
             display: flex;
             margin: 20px;
         }
+
+        #selects span {
+            padding:0 10px;
+        }
+
+        button {
+            display: inline-block;
+            padding: 0.7em 1.4em;
+            margin: 0 0.3em 0.3em 0;
+            border-radius: 0.15em;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+            font-weight: 400;
+            color: #FFFFFF;
+            background-color: red;
+            box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+            text-align: center;
+            position: relative;
+        }
     </style>
 
 </head>
@@ -59,9 +81,13 @@
 <body>
     <div id="app">
 
+        <h1>O que você fez para a Lumena te cancelar?</h1>
+
+      
         <h1>Selecione o dia e ano que você nasceu e a cor da camisa que você está usando</h1>
 
         <div id="selects">
+            <span>Nasci em: </span>
             <select id="day">
                 <option value="1" selected>1</option>
                 <option value="2">2</option>
@@ -109,6 +135,26 @@
                 <option value="11">Novembro</option>
                 <option value="12">Dezembro</option>
             </select>
+
+
+            <span>Estou com camisa:</span>
+            <select id="color">
+                <option value="Branca" selected>Branca</option>
+                <option value="Azul">Azul</option>
+                <option value="Preta">Preta</option>
+                <option value="Rosa">Rosa</option>
+                <option value="Verde">Verde</option>
+                <option value="Amarela">Amarela</option>
+                <option value="Vermelha">Vermelha</option>
+                <option value="Cinza">Cinza</option>
+                <option value="Colorida">Colorida</option>
+                <option value="Roxa">Roxa</option>
+                <option value="Laranja">Laranja</option>
+                <option value="Bege">Bege</option>
+                <option value="Listrada">Listrada</option>
+                <option value="Outra">Outra</option>
+            </select>
+
              <select id="color">
                 <option value="1" selected>Branca</option>
                 <option value="2">Azul</option>
@@ -128,16 +174,33 @@
             </select>
 
         </div>
-        <div id="lumena">
-            <span id="lumeation"></span>
-        </div>
+        <button type="button" id="lumenati">O que eu fiz Lumena?</button>
+
+        <canvas id="lumena" width="500" height="326"></canvas>
+
     </div>
 </body>
 
 <script>
     let lumenations, day, month, color;
 
-    const dayElement = document.getElementById("day");
+    const dayElement = document.getElementById('day');
+    const monthElement = document.getElementById('month');
+    const colorElement = document.getElementById('color');
+    const buttonElement = document.getElementById('lumenati')
+
+    var canvas = document.getElementById('lumena'),
+        ctx = canvas.getContext('2d'),
+        width = +(canvas.width = 500),
+        height = +(canvas.height = 326),
+        fontFamily = "Arial",
+        fontSize = "24px",
+        fontColour = "white";
+
+    let background = new Image();
+    background.src = 'lumena.jpg';
+
+  const dayElement = document.getElementById("day");
     const monthElement = document.getElementById("month");
     const colorElement = document.getElementById("color");
     const lumentationElement = document.getElementById("lumeation");
@@ -149,6 +212,10 @@
             lumenate()
         })
 
+    dayElement.addEventListener('change', clear)
+    monthElement.addEventListener('change', clear)
+    colorElement.addEventListener('change', clear)
+    buttonElement.addEventListener('click', lumenate)
     dayElement.addEventListener('change', lumenate)
     monthElement.addEventListener('change', lumenate)
     colorElement.addEventListener('change', lumenate)
@@ -162,8 +229,64 @@
         let monthLumene = lumenations.meses.find(value => value.mes == month)
         let colorLumene = lumenations.cores.find(value => value.cor == color)
 
+        let lumenation = `Você ${dayLumene.frase.toLowerCase()} ${monthLumene.frase} ${colorLumene.frase}, meu parceiro!`
+        draw(lumenation)
+
+
         lumentationElement.innerHTML = `Você grandão, ${dayLumene.frase.toLowerCase()} ${monthLumene.frase} ${colorLumene.frase}!`
+
     };
+
+    function fragmentText(text, maxWidth) {
+        var words = text.split(' '),
+            lines = [],
+            line = "";
+        if (ctx.measureText(text).width < maxWidth) {
+            return [text];
+        }
+        while (words.length > 0) {
+            while (ctx.measureText(words[0]).width >= maxWidth) {
+                var tmp = words[0];
+                words[0] = tmp.slice(0, -1);
+                if (words.length > 1) {
+                    words[1] = tmp.slice(-1) + words[1];
+                } else {
+                    words.push(tmp.slice(-1));
+                }
+            }
+            if (ctx.measureText(line + words[0]).width < maxWidth) {
+                line += words.shift() + " ";
+            } else {
+                lines.push(line);
+                line = "";
+            }
+            if (words.length === 0) {
+                lines.push(line);
+            }
+        }
+        return lines;
+    }
+
+    function clear(){
+        ctx.save();
+        ctx.drawImage(background, 0, 0);
+        ctx.restore();
+    }
+
+    function draw(text) {
+        ctx.save();
+        ctx.clearRect(0, 0, width, height);
+        ctx.font = "bold " + fontSize + " " + fontFamily;
+        ctx.textAlign = "center";
+        ctx.fillStyle = fontColour;
+        ctx.drawImage(background, 0, 0);
+        var lines = fragmentText(text, width - parseInt(fontSize, 0));
+        lines.forEach(function (line, i) {
+            ctx.fillText(line, width / 2, (i + 8) * parseInt(fontSize, 0));
+        });
+        ctx.restore();
+    }
+
 </script>
 
 </html>
